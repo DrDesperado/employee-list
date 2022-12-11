@@ -1,0 +1,18 @@
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+<h3>Employee Detail</h3>
+<div>
+  <div>
+    <label for="firstName"><b> First Name: </b></label> {{ employee.firstName }}
+  </div>
+  <div>
+    <label for="lastName"><b> Last Name: </b></label> {{ employee.lastName }}
+  </div>
+  <div>
+    <label for="emailId"><b> Email: </b></label> {{ employee.emailId }}
+  </div>
+  <button class="btn btn-success" type="submit" (click)="goToBack()">
+    Back
+  </button>
+</div>
