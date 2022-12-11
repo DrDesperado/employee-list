@@ -4,10 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### frontend ###
-frontend/node_modules
-frontend/npm-debug.log
-frontend/yarn-error.log
+
 
 ### STS ###
 .apt_generated
