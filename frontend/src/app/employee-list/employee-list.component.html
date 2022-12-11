@@ -1,0 +1,82 @@
+<h2 class="text-center">Employee List</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Id</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.emailId }}</td>
+      <td>
+        <button (click)="updateEmployee(employee.id)" class="btn btn-info">
+          Update
+        </button>
+        <button
+          class="btn btn-danger"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteModal"
+          (id) = "employee.id"
+          (click)="openModal(employee.id)"
+        >
+          Delete
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="deleteModal"
+          tabindex="-1"
+          aria-labelledby="deleteModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteModalLabel">
+                  Delete this employee
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">Are you sure?</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-info"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="deleteEmployee(content)"
+                  data-bs-dismiss="modal"
+                  
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button (click)="employeeDetail(employee.id)" class="btn btn-warning">
+          Detail
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
